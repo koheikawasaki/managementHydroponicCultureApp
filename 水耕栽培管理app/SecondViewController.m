@@ -7,11 +7,12 @@
 //
 /*
  温度測定のやり方
- 1. ボタンを押すとAIO2から1.3Vの出力を出す
- 2. 3回ほどAIO0, AIO1の電圧を読み取る
- 3. 平均を出すかひどいのを弾くかでいい値を取ってくる
- 4. 電圧から温度を計算する
- 5. UILabalに表示させる*/
+ 1. AIO2から1.3Vの出力を出す
+ 2. とりあえずはボタンをおす
+ 3. 3回ほどAIO0, AIO1の電圧を読み取る
+ 4. 平均を出すかひどいのを弾くかでいい値を取ってくる
+ 5. 電圧から温度を計算する
+ 6. UILabalに表示させる*/
 #import "SecondViewController.h"
 #import "Konashi.h"
 @interface SecondViewController ()
@@ -22,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    /*float Rth;
+    float Rth;
     float R0;
     float B;
     float temp;
@@ -38,7 +39,7 @@
     temp = 1/A - absT;
     NSLog(@"%f",temp);
     NSLog(@"%f", A);
-    NSLog(@"%f", log(Rth/R0));*/
+    NSLog(@"%f", log(Rth/R0));
     
     [self.dacBar0 addTarget:self action:@selector(onChangeDacBar:) forControlEvents:UIControlEventValueChanged];
     [self.dacBar1 addTarget:self action:@selector(onChangeDacBar:) forControlEvents:UIControlEventValueChanged];
@@ -52,6 +53,9 @@
     [Konashi shared].analogPinDidChangeValueHandler = ^(KonashiAnalogIOPin pin, int value) {
         NSLog(@"aio changed:%d(pin:%d)", value, pin);
     };
+    int volt = 1300;
+    [Konashi analogWrite:KonashiAnalogIO2 milliVolt:volt];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,9 +86,12 @@
 }
 
 - (IBAction)setAio2:(id)sender {
-    int volt = 1300;
-    [Konashi analogWrite:KonashiAnalogIO2 milliVolt:volt];
-    
+    /*int volt = 1300;
+    [Konashi analogWrite:KonashiAnalogIO2 milliVolt:volt];*/
+    [Konashi analogReadRequest:KonashiAnalogIO0];
+    [Konashi analogReadRequest:KonashiAnalogIO1];
+    //NSLog(@"%f", V0);
+    //NSLog(@"%f", V1);
 }
 
 
