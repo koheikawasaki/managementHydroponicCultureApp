@@ -16,7 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    float Rth;
+    float R0;
+    float B;
+    float temp;
+    float absT;
+    float T0;
+    float A;
+    T0 = 25;
+    absT = 273;
+    Rth = 2979;
+    R0 = 10000;
+    B = 3380;
+    A = (log(Rth/R0))/B+(1/(T0+absT));
+    temp = 1/A - absT;
+    NSLog(@"%f",temp);
+    NSLog(@"%f", A);
+    NSLog(@"%f", log(Rth/R0));
 }
 
 - (void)didReceiveMemoryWarning {

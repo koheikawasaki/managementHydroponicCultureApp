@@ -26,6 +26,7 @@
 #import "KNSCentralManager.h"
 #import "KNSCentralManager+UI.h"
 #import "KonashiJavaScriptBindingsProtocol.h"
+#import <UIKit/UIKit.h>
 
 @class KNSHandlerManager;
 @interface Konashi : NSObject <CBPeripheralDelegate, KonashiJavaScriptBindings>
