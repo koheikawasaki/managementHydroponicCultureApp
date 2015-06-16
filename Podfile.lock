@@ -1,0 +1,10 @@
+PODS:
+  - konashi-ios-sdk (3.1.0)
+
+DEPENDENCIES:
+  - konashi-ios-sdk (~> 3.0)
+
+SPEC CHECKSUMS:
+  konashi-ios-sdk: c455135704ae23bfcde5feb5232c2438e665df35
+
+COCOAPODS: 0.37.2

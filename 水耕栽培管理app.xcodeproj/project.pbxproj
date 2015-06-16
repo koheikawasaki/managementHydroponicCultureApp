@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36A9FEED1B2FA6E800ECFF52 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A9FEEC1B2FA6E800ECFF52 /* main.m */; };
+		36A9FEF01B2FA6E800ECFF52 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A9FEEF1B2FA6E800ECFF52 /* AppDelegate.m */; };
+		36A9FEF31B2FA6E800ECFF52 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A9FEF21B2FA6E800ECFF52 /* FirstViewController.m */; };
+		36A9FEF61B2FA6E800ECFF52 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A9FEF51B2FA6E800ECFF52 /* SecondViewController.m */; };
+		36A9FEF91B2FA6E800ECFF52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A9FEF71B2FA6E800ECFF52 /* Main.storyboard */; };
+		36A9FEFB1B2FA6E800ECFF52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A9FEFA1B2FA6E800ECFF52 /* Images.xcassets */; };
+		36A9FEFE1B2FA6E800ECFF52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A9FEFC1B2FA6E800ECFF52 /* LaunchScreen.xib */; };
+		36A9FF0A1B2FA6E800ECFF52 /* ______appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A9FF091B2FA6E800ECFF52 /* ______appTests.m */; };
+		36A9FF141B2FBAA500ECFF52 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 36A9FF131B2FBAA500ECFF52 /* podfile */; };
+		964B6A8AAFE605FE3B4474F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FE34C61B726663D22BCEE2 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36A9FF041B2FA6E800ECFF52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36A9FEDF1B2FA6E800ECFF52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36A9FEE61B2FA6E800ECFF52;
+			remoteInfo = "水耕栽培管理app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		32C3CAF95795F8911CEFF55C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		36A9FEE71B2FA6E800ECFF52 /* 水耕栽培管理app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "水耕栽培管理app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36A9FEEB1B2FA6E800ECFF52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36A9FEEC1B2FA6E800ECFF52 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36A9FEEE1B2FA6E800ECFF52 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		36A9FEEF1B2FA6E800ECFF52 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		36A9FEF11B2FA6E800ECFF52 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		36A9FEF21B2FA6E800ECFF52 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		36A9FEF41B2FA6E800ECFF52 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		36A9FEF51B2FA6E800ECFF52 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		36A9FEF81B2FA6E800ECFF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		36A9FEFA1B2FA6E800ECFF52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		36A9FEFD1B2FA6E800ECFF52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		36A9FF031B2FA6E800ECFF52 /* 水耕栽培管理appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "水耕栽培管理appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36A9FF081B2FA6E800ECFF52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36A9FF091B2FA6E800ECFF52 /* ______appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "______appTests.m"; sourceTree = "<group>"; };
+		36A9FF131B2FBAA500ECFF52 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
+		9E58ED778E3E9FEC3134166F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B1FE34C61B726663D22BCEE2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36A9FEE41B2FA6E800ECFF52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				964B6A8AAFE605FE3B4474F8 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36A9FF001B2FA6E800ECFF52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A091ECF901154823E369044 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E58ED778E3E9FEC3134166F /* Pods.debug.xcconfig */,
+				32C3CAF95795F8911CEFF55C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		36A9FEDE1B2FA6E800ECFF52 = {
+			isa = PBXGroup;
+			children = (
+				36A9FF131B2FBAA500ECFF52 /* podfile */,
+				36A9FEE91B2FA6E800ECFF52 /* 水耕栽培管理app */,
+				36A9FF061B2FA6E800ECFF52 /* 水耕栽培管理appTests */,
+				36A9FEE81B2FA6E800ECFF52 /* Products */,
+				1A091ECF901154823E369044 /* Pods */,
+				9E4D435976BB5E9F622D14D5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		36A9FEE81B2FA6E800ECFF52 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36A9FEE71B2FA6E800ECFF52 /* 水耕栽培管理app.app */,
+				36A9FF031B2FA6E800ECFF52 /* 水耕栽培管理appTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36A9FEE91B2FA6E800ECFF52 /* 水耕栽培管理app */ = {
+			isa = PBXGroup;
+			children = (
+				36A9FEEE1B2FA6E800ECFF52 /* AppDelegate.h */,
+				36A9FEEF1B2FA6E800ECFF52 /* AppDelegate.m */,
+				36A9FEF11B2FA6E800ECFF52 /* FirstViewController.h */,
+				36A9FEF21B2FA6E800ECFF52 /* FirstViewController.m */,
+				36A9FEF41B2FA6E800ECFF52 /* SecondViewController.h */,
+				36A9FEF51B2FA6E800ECFF52 /* SecondViewController.m */,
+				36A9FEF71B2FA6E800ECFF52 /* Main.storyboard */,
+				36A9FEFA1B2FA6E800ECFF52 /* Images.xcassets */,
+				36A9FEFC1B2FA6E800ECFF52 /* LaunchScreen.xib */,
+				36A9FEEA1B2FA6E800ECFF52 /* Supporting Files */,
+			);
+			path = "水耕栽培管理app";
+			sourceTree = "<group>";
+		};
+		36A9FEEA1B2FA6E800ECFF52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36A9FEEB1B2FA6E800ECFF52 /* Info.plist */,
+				36A9FEEC1B2FA6E800ECFF52 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36A9FF061B2FA6E800ECFF52 /* 水耕栽培管理appTests */ = {
+			isa = PBXGroup;
+			children = (
+				36A9FF091B2FA6E800ECFF52 /* ______appTests.m */,
+				36A9FF071B2FA6E800ECFF52 /* Supporting Files */,
+			);
+			path = "水耕栽培管理appTests";
+			sourceTree = "<group>";
+		};
+		36A9FF071B2FA6E800ECFF52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36A9FF081B2FA6E800ECFF52 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9E4D435976BB5E9F622D14D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1FE34C61B726663D22BCEE2 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36A9FEE61B2FA6E800ECFF52 /* 水耕栽培管理app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36A9FF0D1B2FA6E800ECFF52 /* Build configuration list for PBXNativeTarget "水耕栽培管理app" */;
+			buildPhases = (
+				94DF06507F50F31413B225A6 /* Check Pods Manifest.lock */,
+				36A9FEE31B2FA6E800ECFF52 /* Sources */,
+				36A9FEE41B2FA6E800ECFF52 /* Frameworks */,
+				36A9FEE51B2FA6E800ECFF52 /* Resources */,
+				F852709E1A042549E3A7747E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "水耕栽培管理app";
+			productName = "水耕栽培管理app";
+			productReference = 36A9FEE71B2FA6E800ECFF52 /* 水耕栽培管理app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36A9FF021B2FA6E800ECFF52 /* 水耕栽培管理appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36A9FF101B2FA6E800ECFF52 /* Build configuration list for PBXNativeTarget "水耕栽培管理appTests" */;
+			buildPhases = (
+				36A9FEFF1B2FA6E800ECFF52 /* Sources */,
+				36A9FF001B2FA6E800ECFF52 /* Frameworks */,
+				36A9FF011B2FA6E800ECFF52 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36A9FF051B2FA6E800ECFF52 /* PBXTargetDependency */,
+			);
+			name = "水耕栽培管理appTests";
+			productName = "水耕栽培管理appTests";
+			productReference = 36A9FF031B2FA6E800ECFF52 /* 水耕栽培管理appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36A9FEDF1B2FA6E800ECFF52 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = koheikawsaki;
+				TargetAttributes = {
+					36A9FEE61B2FA6E800ECFF52 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = R9DA69NSP3;
+					};
+					36A9FF021B2FA6E800ECFF52 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 36A9FEE61B2FA6E800ECFF52;
+					};
+				};
+			};
+			buildConfigurationList = 36A9FEE21B2FA6E800ECFF52 /* Build configuration list for PBXProject "水耕栽培管理app" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 36A9FEDE1B2FA6E800ECFF52;
+			productRefGroup = 36A9FEE81B2FA6E800ECFF52 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36A9FEE61B2FA6E800ECFF52 /* 水耕栽培管理app */,
+				36A9FF021B2FA6E800ECFF52 /* 水耕栽培管理appTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36A9FEE51B2FA6E800ECFF52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36A9FEF91B2FA6E800ECFF52 /* Main.storyboard in Resources */,
+				36A9FEFE1B2FA6E800ECFF52 /* LaunchScreen.xib in Resources */,
+				36A9FF141B2FBAA500ECFF52 /* podfile in Resources */,
+				36A9FEFB1B2FA6E800ECFF52 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36A9FF011B2FA6E800ECFF52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94DF06507F50F31413B225A6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F852709E1A042549E3A7747E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36A9FEE31B2FA6E800ECFF52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36A9FEF61B2FA6E800ECFF52 /* SecondViewController.m in Sources */,
+				36A9FEF01B2FA6E800ECFF52 /* AppDelegate.m in Sources */,
+				36A9FEF31B2FA6E800ECFF52 /* FirstViewController.m in Sources */,
+				36A9FEED1B2FA6E800ECFF52 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36A9FEFF1B2FA6E800ECFF52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36A9FF0A1B2FA6E800ECFF52 /* ______appTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36A9FF051B2FA6E800ECFF52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36A9FEE61B2FA6E800ECFF52 /* 水耕栽培管理app */;
+			targetProxy = 36A9FF041B2FA6E800ECFF52 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36A9FEF71B2FA6E800ECFF52 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36A9FEF81B2FA6E800ECFF52 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		36A9FEFC1B2FA6E800ECFF52 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36A9FEFD1B2FA6E800ECFF52 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36A9FF0B1B2FA6E800ECFF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		36A9FF0C1B2FA6E800ECFF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36A9FF0E1B2FA6E800ECFF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E58ED778E3E9FEC3134166F /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daigo Kusunoki (Y4HH6VCYUX)";
+				INFOPLIST_FILE = "水耕栽培管理app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		36A9FF0F1B2FA6E800ECFF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32C3CAF95795F8911CEFF55C /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Daigo Kusunoki (Y4HH6VCYUX)";
+				INFOPLIST_FILE = "水耕栽培管理app/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		36A9FF111B2FA6E800ECFF52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "水耕栽培管理appTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/水耕栽培管理app.app/水耕栽培管理app";
+			};
+			name = Debug;
+		};
+		36A9FF121B2FA6E800ECFF52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "水耕栽培管理appTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/水耕栽培管理app.app/水耕栽培管理app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36A9FEE21B2FA6E800ECFF52 /* Build configuration list for PBXProject "水耕栽培管理app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36A9FF0B1B2FA6E800ECFF52 /* Debug */,
+				36A9FF0C1B2FA6E800ECFF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36A9FF0D1B2FA6E800ECFF52 /* Build configuration list for PBXNativeTarget "水耕栽培管理app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36A9FF0E1B2FA6E800ECFF52 /* Debug */,
+				36A9FF0F1B2FA6E800ECFF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36A9FF101B2FA6E800ECFF52 /* Build configuration list for PBXNativeTarget "水耕栽培管理appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36A9FF111B2FA6E800ECFF52 /* Debug */,
+				36A9FF121B2FA6E800ECFF52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36A9FEDF1B2FA6E800ECFF52 /* Project object */;
+}

@@ -1,0 +1,1 @@
+PODS_KONASHI_IOS_SDK_OTHER_LDFLAGS = -framework "CoreBluetooth" -framework "JavaScriptCore"
