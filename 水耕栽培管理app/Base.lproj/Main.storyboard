@@ -121,21 +121,44 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="20" width="61" height="21"/>
-                                </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQp-vw-Mka">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="186" y="103" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="setAio2:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="knf-Y3-k38"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.60364206060000003" green="0.88475089399999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ZJq-Xc-EoU" secondAttribute="centerX" constant="-9.5" id="CL8-Rp-smE"/>
+                            <constraint firstItem="ZJq-Xc-EoU" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="MS8-lI-bBO"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ZJq-Xc-EoU"/>
+                                <exclude reference="AQp-vw-Mka"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="CL8-Rp-smE"/>
+                                <exclude reference="MS8-lI-bBO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ZJq-Xc-EoU"/>
+                                <include reference="AQp-vw-Mka"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="CL8-Rp-smE"/>
+                                <include reference="MS8-lI-bBO"/>
                             </mask>
                         </variation>
                     </view>
