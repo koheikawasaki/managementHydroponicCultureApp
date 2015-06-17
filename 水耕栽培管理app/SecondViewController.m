@@ -9,37 +9,24 @@
  温度測定のやり方
  1. 3v or 5v の出力は出してる
  2. とりあえずはボタンをおす
- 3. 3回ほどAIO0(thermistor + resiterの電圧降下値), AIO1(resiterの電圧降下)の電圧を読み取る
+ 3. AIO0(thermistor + resiterの電圧降下値), AIO1(resiterの電圧降下)の電圧を読み取る
  4. 平均を出すかひどいのを弾くかでいい値を取ってくる←いるかな？
  5. 電圧から温度を計算する
- 6. UILabalに表示させる*/
+ 6. UILabalに表示させる
+ */
 #import "SecondViewController.h"
 #import "Konashi.h"
+
 @interface SecondViewController ()
 
 @end
 
 @implementation SecondViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    float Rth;
-    float R0;
-    float B;
-    float temp;
-    float absT;
-    float T0;
-    float A;
-    T0 = 25;
-    absT = 273;
-    Rth = 2979;
-    R0 = 10000;
-    B = 3380;
-    A = (log(Rth/R0))/B+(1/(T0+absT));
-    temp = 1/A - absT;
-    NSLog(@"%f",temp);
-    NSLog(@"%f", A);
-    NSLog(@"%f", log(Rth/R0));
+    // Do any additional setup after loading the view.
     
     [self.dacBar0 addTarget:self action:@selector(onChangeDacBar:) forControlEvents:UIControlEventValueChanged];
     [self.dacBar1 addTarget:self action:@selector(onChangeDacBar:) forControlEvents:UIControlEventValueChanged];
@@ -53,15 +40,17 @@
     [Konashi shared].analogPinDidChangeValueHandler = ^(KonashiAnalogIOPin pin, int value) {
         NSLog(@"aio changed:%d(pin:%d)", value, pin);
     };
-    int volt = 1300;
-    [Konashi analogWrite:KonashiAnalogIO2 milliVolt:volt];
-    
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/////////////////////////////////////
+// DAC
+
 - (void)onChangeDacBar:(id)sender
 {
     if(sender == self.dacBar0){
@@ -96,7 +85,61 @@
 
 - (IBAction)getAio0:(id)sender {
     [Konashi analogReadRequest:KonashiAnalogIO0];
+    [self performSelector:@selector(readAio1) withObject:nil afterDelay:0.1];
 }
+- (void)readAio1
+{
+    NSLog(@"performSelector complete!");
+    [Konashi analogReadRequest:KonashiAnalogIO1];
+    [self performSelector:@selector(defV0V1calc) withObject:nil afterDelay:0.1];
+}
+- (void)defV0V1calc
+{
+    double V0, V1;
+    V0 = [Konashi analogRead:KonashiAnalogIO0];
+    V1 = [Konashi analogRead:KonashiAnalogIO1];
+    NSLog(@"Voltage is %f%f", V0, V1);
+    float Rth, R0, B, temp, absT, T0, A;
+    T0 = 25;
+    absT = 273;
+    R0 = 10000;
+    B = 3380;
+    Rth = 330*(V0/V1);
+    A = (log(Rth/R0))/B+(1/(T0+absT));
+    temp = 1/A - absT;
+    NSLog(@"%f//%f", Rth, temp);
+    NSString *str3 = [NSString stringWithFormat:@"%.1f", temp];
+    self.adc0.text = str3;
+    
+    
+    
+        /*// ラベルの設置
+        CGRect rect = CGRectMake(10, 10, 100, 100);
+        UILabel *label = [[UILabel alloc]initWithFrame:rect];
+        
+        // ラベルのテキストを設定
+        label.text = str3;
+        
+        // ラベルのテキストのフォントを設定
+        label.font = [UIFont fontWithName:@"Helvetica" size:16];
+        
+        // ラベルのテキストの色を設定
+        label.textColor = [UIColor blueColor];
+        
+        // ラベルのテキストの影を設定
+        label.shadowColor = [UIColor grayColor];
+        label.shadowOffset = CGSizeMake(1, 1);
+        
+        // ラベルのテキストの行数設定
+        label.numberOfLines = 0; // 0の場合は無制限
+        
+        // ラベルの背景色を設定
+        label.backgroundColor = [UIColor whiteColor];
+        
+        // ラベルをビューに追加
+        [self.view addSubview:label];*/
+}
+
 
 - (IBAction)getAio1:(id)sender {
     [Konashi analogReadRequest:KonashiAnalogIO1];
@@ -108,7 +151,6 @@
 
 - (void)onGetAio0
 {
-    self.adc0.text = [NSString stringWithFormat:@"%.3f", (double)[Konashi analogRead:KonashiAnalogIO0] / 1000];
 }
 - (void)onGetAio1
 {
@@ -118,19 +160,11 @@
 {
     self.adc2.text = [NSString stringWithFormat:@"%.3f", (double)[Konashi analogRead:KonashiAnalogIO2] / 1000];
 }
-
-
-- (IBAction)getTemperature:(id)sender {
-    float V1;
-    float V2;
-    V1 = [Konashi analogReadRequest:KonashiAnalogIO0];
-    V2 = [Konashi analogReadRequest:KonashiAnalogIO1];
-    NSLog(@"%f", V1);
-    NSLog(@"%f", V2);
-    
-    
+- (IBAction)getTemperature:(id)sender
+{
+    int a;
+    a = [Konashi analogReadRequest:KonashiAnalogIO0];
+    NSLog(@"testTemperature%d", a);
 }
-
-
 
 @end

@@ -131,9 +131,27 @@
                                     <rect key="frame" x="186" y="103" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="getTemperature:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Kk5-4g-KjP"/>
+                                    <action selector="getAio0:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Y8A-t2-azJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0j-FO-lwV">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="166" y="141" width="96" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U6-pk-bnw">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="188" y="181" width="43" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.60364206060000003" green="0.88475089399999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,6 +163,8 @@
                             <mask key="subviews">
                                 <exclude reference="ZJq-Xc-EoU"/>
                                 <exclude reference="AQp-vw-Mka"/>
+                                <exclude reference="E0j-FO-lwV"/>
+                                <exclude reference="3U6-pk-bnw"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="CL8-Rp-smE"/>
@@ -155,6 +175,8 @@
                             <mask key="subviews">
                                 <include reference="ZJq-Xc-EoU"/>
                                 <include reference="AQp-vw-Mka"/>
+                                <include reference="E0j-FO-lwV"/>
+                                <include reference="3U6-pk-bnw"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="CL8-Rp-smE"/>
@@ -163,6 +185,9 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="adc0" destination="3U6-pk-bnw" id="fX9-tV-qB3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
