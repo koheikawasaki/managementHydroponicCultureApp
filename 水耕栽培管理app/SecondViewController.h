@@ -26,6 +26,8 @@
 - (IBAction)getAio0:(id)sender;
 - (IBAction)getAio1:(id)sender;
 - (IBAction)getAio2:(id)sender;
+- (IBAction)getTemperature:(id)sender;
+
 
 @end
 

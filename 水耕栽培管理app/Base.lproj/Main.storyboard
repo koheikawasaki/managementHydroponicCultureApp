@@ -131,7 +131,7 @@
                                     <rect key="frame" x="186" y="103" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="setAio2:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="knf-Y3-k38"/>
+                                    <action selector="getTemperature:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Kk5-4g-KjP"/>
                                 </connections>
                             </button>
                         </subviews>

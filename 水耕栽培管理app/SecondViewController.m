@@ -7,10 +7,10 @@
 //
 /*
  温度測定のやり方
- 1. AIO2から1.3Vの出力を出す
+ 1. 3v or 5v の出力は出してる
  2. とりあえずはボタンをおす
- 3. 3回ほどAIO0, AIO1の電圧を読み取る
- 4. 平均を出すかひどいのを弾くかでいい値を取ってくる
+ 3. 3回ほどAIO0(thermistor + resiterの電圧降下値), AIO1(resiterの電圧降下)の電圧を読み取る
+ 4. 平均を出すかひどいのを弾くかでいい値を取ってくる←いるかな？
  5. 電圧から温度を計算する
  6. UILabalに表示させる*/
 #import "SecondViewController.h"
@@ -86,12 +86,8 @@
 }
 
 - (IBAction)setAio2:(id)sender {
-    /*int volt = 1300;
-    [Konashi analogWrite:KonashiAnalogIO2 milliVolt:volt];*/
-    [Konashi analogReadRequest:KonashiAnalogIO0];
-    [Konashi analogReadRequest:KonashiAnalogIO1];
-    //NSLog(@"%f", V0);
-    //NSLog(@"%f", V1);
+    int volt = (int)(self.dacBar2.value * 1300);
+    [Konashi analogWrite:KonashiAnalogIO2 milliVolt:volt];
 }
 
 
@@ -122,5 +118,19 @@
 {
     self.adc2.text = [NSString stringWithFormat:@"%.3f", (double)[Konashi analogRead:KonashiAnalogIO2] / 1000];
 }
+
+
+- (IBAction)getTemperature:(id)sender {
+    float V1;
+    float V2;
+    V1 = [Konashi analogReadRequest:KonashiAnalogIO0];
+    V2 = [Konashi analogReadRequest:KonashiAnalogIO1];
+    NSLog(@"%f", V1);
+    NSLog(@"%f", V2);
+    
+    
+}
+
+
 
 @end
