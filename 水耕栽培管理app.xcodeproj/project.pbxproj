@@ -16,6 +16,7 @@
 		36A9FEFE1B2FA6E800ECFF52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36A9FEFC1B2FA6E800ECFF52 /* LaunchScreen.xib */; };
 		36A9FF0A1B2FA6E800ECFF52 /* ______appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36A9FF091B2FA6E800ECFF52 /* ______appTests.m */; };
 		36A9FF141B2FBAA500ECFF52 /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = 36A9FF131B2FBAA500ECFF52 /* podfile */; };
+		36FD70121B33B4EC00214D34 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FD70111B33B4EC00214D34 /* ThirdViewController.m */; };
 		964B6A8AAFE605FE3B4474F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FE34C61B726663D22BCEE2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		36A9FF081B2FA6E800ECFF52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36A9FF091B2FA6E800ECFF52 /* ______appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "______appTests.m"; sourceTree = "<group>"; };
 		36A9FF131B2FBAA500ECFF52 /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = "<group>"; };
+		36FD700C1B33B2FE00214D34 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		36FD70111B33B4EC00214D34 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		9E58ED778E3E9FEC3134166F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B1FE34C61B726663D22BCEE2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +113,8 @@
 				36A9FEF41B2FA6E800ECFF52 /* SecondViewController.h */,
 				36A9FEF51B2FA6E800ECFF52 /* SecondViewController.m */,
 				36A9FEF71B2FA6E800ECFF52 /* Main.storyboard */,
+				36FD70111B33B4EC00214D34 /* ThirdViewController.m */,
+				36FD700C1B33B2FE00214D34 /* ThirdViewController.h */,
 				36A9FEFA1B2FA6E800ECFF52 /* Images.xcassets */,
 				36A9FEFC1B2FA6E800ECFF52 /* LaunchScreen.xib */,
 				36A9FEEA1B2FA6E800ECFF52 /* Supporting Files */,
@@ -289,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A9FEF61B2FA6E800ECFF52 /* SecondViewController.m in Sources */,
+				36FD70121B33B4EC00214D34 /* ThirdViewController.m in Sources */,
 				36A9FEF01B2FA6E800ECFF52 /* AppDelegate.m in Sources */,
 				36A9FEF31B2FA6E800ECFF52 /* FirstViewController.m in Sources */,
 				36A9FEED1B2FA6E800ECFF52 /* main.m in Sources */,

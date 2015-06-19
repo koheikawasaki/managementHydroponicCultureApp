@@ -1,44 +1,65 @@
 //
-//  SecondViewController.m
+//  ThirdViewController.m
 //  水耕栽培管理app
 //
-//  Created by Kohei Kawasaki on 6/16/15.
+//  Created by Kohei Kawasaki on 6/19/15.
 //  Copyright (c) 2015 koheikawsaki. All rights reserved.
 //
-/*
- 温度測定のやり方
- 1. 3v or 5v の出力は出してる
- 2. とりあえずはボタンをおす
- 3. AIO0(thermistor + resiterの電圧降下値), AIO1(resiterの電圧降下)の電圧を読み取る
- 4. 平均を出すかひどいのを弾くかでいい値を取ってくる←いるかな？
- 5. 電圧から温度を計算する
- 6. UILabalに表示させる
- */
-#import "SecondViewController.h"
+
+#import "ThirdViewController.h"
+#import <UIKit/UIKit.h>
 #import "Konashi.h"
 
-@interface SecondViewController ()
+
+@interface ThirdViewController : UIViewController
 
 @end
 
-@implementation SecondViewController
+@implementation PioViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view, typically from a nib.
     
-    [self.dacBar0 addTarget:self action:@selector(onChangeDacBar:) forControlEvents:UIControlEventValueChanged];
-    [self.dacBar1 addTarget:self action:@selector(onChangeDacBar:) forControlEvents:UIControlEventValueChanged];
-    [self.dacBar2 addTarget:self action:@selector(onChangeDacBar:) forControlEvents:UIControlEventValueChanged];
+    // I/O設定のスイッチのイベントハンドラ登録
+    [self.pin0 addTarget:self action:@selector(onChangePin:) forControlEvents:UIControlEventValueChanged];
+    [self.pin1 addTarget:self action:@selector(onChangePin:) forControlEvents:UIControlEventValueChanged];
+    [self.pin2 addTarget:self action:@selector(onChangePin:) forControlEvents:UIControlEventValueChanged];
+    [self.pin3 addTarget:self action:@selector(onChangePin:) forControlEvents:UIControlEventValueChanged];
+    [self.pin4 addTarget:self action:@selector(onChangePin:) forControlEvents:UIControlEventValueChanged];
+    [self.pin5 addTarget:self action:@selector(onChangePin:) forControlEvents:UIControlEventValueChanged];
+    [self.pin6 addTarget:self action:@selector(onChangePin:) forControlEvents:UIControlEventValueChanged];
+    [self.pin7 addTarget:self action:@selector(onChangePin:) forControlEvents:UIControlEventValueChanged];
     
-    // ADC
-    [Konashi addObserver:self selector:@selector(onGetAio0) name:KonashiEventAnalogIO0DidUpdateNotification];
-    [Konashi addObserver:self selector:@selector(onGetAio1) name:KonashiEventAnalogIO1DidUpdateNotification];
-    [Konashi addObserver:self selector:@selector(onGetAio2) name:KonashiEventAnalogIO2DidUpdateNotification];
+    // 出力のスイッチのイベントハンドラ登録
+    [self.out0 addTarget:self action:@selector(onChangeOutput:) forControlEvents:UIControlEventValueChanged];
+    [self.out1 addTarget:self action:@selector(onChangeOutput:) forControlEvents:UIControlEventValueChanged];
+    [self.out2 addTarget:self action:@selector(onChangeOutput:) forControlEvents:UIControlEventValueChanged];
+    [self.out3 addTarget:self action:@selector(onChangeOutput:) forControlEvents:UIControlEventValueChanged];
+    [self.out4 addTarget:self action:@selector(onChangeOutput:) forControlEvents:UIControlEventValueChanged];
+    [self.out5 addTarget:self action:@selector(onChangeOutput:) forControlEvents:UIControlEventValueChanged];
+    [self.out6 addTarget:self action:@selector(onChangeOutput:) forControlEvents:UIControlEventValueChanged];
+    [self.out7 addTarget:self action:@selector(onChangeOutput:) forControlEvents:UIControlEventValueChanged];
     
-    [Konashi shared].analogPinDidChangeValueHandler = ^(KonashiAnalogIOPin pin, int value) {
-        NSLog(@"aio changed:%d(pin:%d)", value, pin);
+    // プルアップのイベントハンドラ登録
+    [self.pullup0 addTarget:self action:@selector(onChangePullup:) forControlEvents:UIControlEventValueChanged];
+    [self.pullup1 addTarget:self action:@selector(onChangePullup:) forControlEvents:UIControlEventValueChanged];
+    [self.pullup2 addTarget:self action:@selector(onChangePullup:) forControlEvents:UIControlEventValueChanged];
+    [self.pullup3 addTarget:self action:@selector(onChangePullup:) forControlEvents:UIControlEventValueChanged];
+    [self.pullup4 addTarget:self action:@selector(onChangePullup:) forControlEvents:UIControlEventValueChanged];
+    [self.pullup5 addTarget:self action:@selector(onChangePullup:) forControlEvents:UIControlEventValueChanged];
+    [self.pullup6 addTarget:self action:@selector(onChangePullup:) forControlEvents:UIControlEventValueChanged];
+    [self.pullup7 addTarget:self action:@selector(onChangePullup:) forControlEvents:UIControlEventValueChanged];
+    
+    // 入力状態の変化イベントハンドラ
+    [Konashi addObserver:self selector:@selector(updatePioInput) name:KonashiEventDigitalIODidUpdateNotification];
+    
+    [Konashi shared].digitalInputDidChangeValueHandler = ^(KonashiDigitalIOPin pin, int value) {
+        NSLog(@"pio input changed:%d(pin:%d)", value, pin);
+    };
+    [Konashi shared].digitalOutputDidChangeValueHandler = ^(KonashiDigitalIOPin pin, int value) {
+        NSLog(@"pio output changed:%d(pin:%d)", value, pin);
     };
 }
 
@@ -48,125 +69,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/////////////////////////////////////
-// DAC
-
-- (void)onChangeDacBar:(id)sender
-{
-    if(sender == self.dacBar0){
-        self.dac0.text = [NSString stringWithFormat:@"%.3f", self.dacBar0.value * 1.3];
-    }
-    else if(sender == self.dacBar1){
-        self.dac1.text = [NSString stringWithFormat:@"%.3f", self.dacBar1.value * 1.3];
-    }
-    else if(sender == self.dacBar2){
-        self.dac2.text = [NSString stringWithFormat:@"%.3f", self.dacBar2.value * 1.3];
-    }
-}
-
-- (IBAction)setAio0:(id)sender {
-    int volt = (int)(self.dacBar0.value * 1300);
-    [Konashi analogWrite:KonashiAnalogIO0 milliVolt:volt];
-}
-
-- (IBAction)setAio1:(id)sender {
-    int volt = (int)(self.dacBar1.value * 1300);
-    [Konashi analogWrite:KonashiAnalogIO1 milliVolt:volt];
-}
-
-- (IBAction)setAio2:(id)sender {
-    int volt = (int)(self.dacBar2.value * 1300);
-    [Konashi analogWrite:KonashiAnalogIO2 milliVolt:volt];
-}
-
-
-/////////////////////////////////////
-// ADC
-double a, b, c, d;
-
-- (IBAction)getAio0:(id)sender {
-    [Konashi analogReadRequest:KonashiAnalogIO0];
-    [self performSelector:@selector(readAio1) withObject:nil afterDelay:0.1];
-}
-- (void)readAio1
-{
-    NSLog(@"performSelector complete!");
-    [Konashi analogReadRequest:KonashiAnalogIO1];
-    [self performSelector:@selector(defV0V1calc) withObject:nil afterDelay:0.1];
-}
-- (void)defV0V1calc
-{
-    double V0, V1;
-    V0 = [Konashi analogRead:KonashiAnalogIO0];
-    V1 = [Konashi analogRead:KonashiAnalogIO1];
-    NSLog(@"Voltage is %f%f", V0, V1);
-    float Rth, R0, B, temp, absT, T0, A;
-    T0 = 25;
-    absT = 273;
-    R0 = 10000;
-    B = 3380;
-    Rth = 330*(V0/V1);
-    A = (log(Rth/R0))/B+(1/(T0+absT));
-    temp = 1/A - absT;
-    NSLog(@"%f//%f", Rth, temp);
-    NSString *str3 = [NSString stringWithFormat:@"%.1f", temp];
-    self.adc0.text = str3;
-    
-    
-    
-        /*// ラベルの設置
-        CGRect rect = CGRectMake(10, 10, 100, 100);
-        UILabel *label = [[UILabel alloc]initWithFrame:rect];
-        
-        // ラベルのテキストを設定
-        label.text = str3;
-        
-        // ラベルのテキストのフォントを設定
-        label.font = [UIFont fontWithName:@"Helvetica" size:16];
-        
-        // ラベルのテキストの色を設定
-        label.textColor = [UIColor blueColor];
-        
-        // ラベルのテキストの影を設定
-        label.shadowColor = [UIColor grayColor];
-        label.shadowOffset = CGSizeMake(1, 1);
-        
-        // ラベルのテキストの行数設定
-        label.numberOfLines = 0; // 0の場合は無制限
-        
-        // ラベルの背景色を設定
-        label.backgroundColor = [UIColor whiteColor];
-        
-        // ラベルをビューに追加
-        [self.view addSubview:label];*/
-}
-
-
-- (IBAction)getAio1:(id)sender {
-    [Konashi analogReadRequest:KonashiAnalogIO1];
-}
-
-- (IBAction)getAio2:(id)sender {
-    [Konashi analogReadRequest:KonashiAnalogIO2];
-}
-
-- (void)onGetAio0
-{
-}
-- (void)onGetAio1
-{
-    self.adc1.text = [NSString stringWithFormat:@"%.3f", (double)[Konashi analogRead:KonashiAnalogIO1] / 1000];
-}
-- (void)onGetAio2
-{
-    self.adc2.text = [NSString stringWithFormat:@"%.3f", (double)[Konashi analogRead:KonashiAnalogIO2] / 1000];
-}
-- (IBAction)getTemperature:(id)sender
-{
-    int a;
-    a = [Konashi analogReadRequest:KonashiAnalogIO0];
-    NSLog(@"testTemperature%d", a);
-}
 
 /////////////////////////////////////
 // I/O設定
@@ -419,7 +321,5 @@ double a, b, c, d;
     self.in6.on = [Konashi digitalRead:KonashiDigitalIO6];
     self.in7.on = [Konashi digitalRead:KonashiDigitalIO7];
 }
-
-
 
 @end

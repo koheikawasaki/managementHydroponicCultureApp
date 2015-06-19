@@ -104,6 +104,57 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="PJD-hu-XEw">
+            <objects>
+                <viewController id="GMA-cg-cgq" customClass="ThirdViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EFm-oq-n3C"/>
+                        <viewControllerLayoutGuide type="bottom" id="qjn-rv-yxd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XyZ-1g-72M">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light switch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdE-bd-w1d">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="0.15310399293679156" green="0.10921941947141878" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="125" y="33" width="172" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.98080421700080478" blue="0.53700163453841399" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LdE-bd-w1d" firstAttribute="top" secondItem="EFm-oq-n3C" secondAttribute="bottom" constant="13" id="NzR-hN-70L"/>
+                            <constraint firstAttribute="centerX" secondItem="LdE-bd-w1d" secondAttribute="centerX" constant="-11" id="imL-uO-JNm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="LdE-bd-w1d"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="NzR-hN-70L"/>
+                                <exclude reference="imL-uO-JNm"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="LdE-bd-w1d"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="NzR-hN-70L"/>
+                                <include reference="imL-uO-JNm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="tbF-0X-rS6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xnu-qD-Bqi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1545" y="0.0"/>
+        </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -193,10 +244,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="354"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Light switch-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController title="Light switch" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -206,6 +257,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="GMA-cg-cgq" kind="relationship" relationship="viewControllers" id="Vcm-yC-403"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
