@@ -44,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="connect:" destination="9pv-A4-QxB" eventType="touchUpInside" id="05Z-XD-8Mg"/>
+                                    <action selector="connect:" destination="9pv-A4-QxB" eventType="touchUpInside" id="udb-2a-xzN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,6 +113,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qjn-rv-yxd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XyZ-1g-72M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light switch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdE-bd-w1d">
@@ -120,10 +121,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <color key="textColor" red="0.15310399293679156" green="0.10921941947141878" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="125" y="33" width="172" height="21"/>
-                                </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0y-SL-M11">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="OFF">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="156" y="296" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="LightOff:" destination="GMA-cg-cgq" eventType="touchUpInside" id="6KZ-kW-WR6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yy-5G-bGN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="ON">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="156" y="217" width="30" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="LightOn:" destination="GMA-cg-cgq" eventType="touchUpInside" id="hV3-nW-Muz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.98080421700080478" blue="0.53700163453841399" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -133,6 +155,8 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="LdE-bd-w1d"/>
+                                <exclude reference="e0y-SL-M11"/>
+                                <exclude reference="5Yy-5G-bGN"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="NzR-hN-70L"/>
@@ -142,6 +166,8 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="LdE-bd-w1d"/>
+                                <include reference="e0y-SL-M11"/>
+                                <include reference="5Yy-5G-bGN"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="NzR-hN-70L"/>
@@ -170,7 +196,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Controll" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJq-Xc-EoU">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQp-vw-Mka">
@@ -188,7 +214,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0j-FO-lwV">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="166" y="141" width="96" height="21"/>
@@ -197,7 +223,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U6-pk-bnw">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="188" y="181" width="43" height="21"/>

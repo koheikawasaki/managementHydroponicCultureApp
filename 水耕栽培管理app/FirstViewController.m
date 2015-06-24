@@ -63,6 +63,13 @@
 
 - (IBAction)connect:(id)sender {
     
+    if ( [Konashi isConnected] ) {
+        [Konashi disconnect];
+        [self.connectButton setTitle: @"konashi に接続する" forState:UIControlStateNormal];
+    } else {
+        [Konashi find];
+    }
+    
 }
 
 - (IBAction)disconnect:(id)sender {
