@@ -10,15 +10,19 @@
 #import "Konashi.h"
 
 
-@interface FirstViewController ()
-
+@interface FirstViewController (){
+    NSString *devName;
+}
 @end
 
 @implementation FirstViewController
 - (void)viewDidLoad
 {
+    //konashi初期化
+    [Konashi initialize];
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     
     // コネクション系
     [Konashi addObserver:self selector:@selector(connected) name:KonashiEventConnectedNotification];
@@ -46,13 +50,21 @@
         NSLog(@"battery level did update:%d", value);
     };
     
-    if ( [Konashi isConnected] ) {
-        [Konashi disconnect];
-        [self.connectButton setTitle: @"konashi に接続する" forState:UIControlStateNormal];
-    } else {
-        [Konashi find];
+    //findWithNameのDebug
+    if ([Konashi findWithName:@"konashi2.0-f012c4"] == KonashiResultSuccess) {
+        NSLog(@"findWithName is true!");
+    }else{
+        NSLog(@"findWithName is false!");
     }
     
+    //デバイス接続
+    if (devName){
+        [Konashi findWithName:devName];
+        NSLog(@"devName = true");
+    }else {
+        [Konashi find];
+        NSLog(@"devName = false");
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,14 +74,6 @@
 }
 
 - (IBAction)connect:(id)sender {
-    
-    if ( [Konashi isConnected] ) {
-        [Konashi disconnect];
-        [self.connectButton setTitle: @"konashi に接続する" forState:UIControlStateNormal];
-    } else {
-        [Konashi find];
-    }
-    
 }
 
 - (IBAction)disconnect:(id)sender {
@@ -98,6 +102,7 @@
     
     self.statusMessage.hidden = FALSE;
     
+    
     // 電波強度タイマー
     NSTimer *tm = [NSTimer
                    scheduledTimerWithTimeInterval:01.0f
@@ -107,6 +112,15 @@
                    repeats:YES
                    ];
     [tm fire];
+    //接続したkonashiの名前を取得、保存。
+    devName = [Konashi peripheralName];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:devName forKey:@"bookmarks"];
+    BOOL successful = [defaults synchronize];
+    if (successful) {
+        NSLog(@"%@", @"データの保存に成功しました。");
+    }
+    NSLog(@"これが接続後取得した値%@",devName);
 }
 
 ///////////////////////////////////////////////////
