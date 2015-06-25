@@ -70,7 +70,7 @@
 					[Konashi findWithName:bfindName];
 				}
 				else {
-					[Konashi find];
+                    [Konashi find];
 				}
 			}
 		}];
@@ -124,7 +124,7 @@
 		KNS_LOG(@"CoreBluetooth not correctly initialized !");
 		KNS_LOG(@"State = %ld (%@)", (long)[KNSCentralManager sharedInstance].state, NSStringFromCBCentralManagerState([KNSCentralManager sharedInstance].state));
 		[Konashi shared].callFind = YES;
-		return KonashiResultSuccess;
+		return KonashiResultFailure;
 	}
 	[[KNSCentralManager sharedInstance] connectWithName:name timeout:KonashiFindTimeoutInterval connectedHandler:^(KNSPeripheral *connectedPeripheral) {
 	}];
